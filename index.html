@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <title>Casino Online | Atención por WhatsApp</title>
+  <meta name="description" content="Casino online con atención por WhatsApp. Registro asistido, pagos rápidos y soporte 24/7. +18. Jugá responsablemente." />
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.08);
+      --border:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --brand:#22c55e; /* WhatsApp vibe */
+      --accent:#60a5fa;
+      --warn:#fbbf24;
+      --shadow: 0 20px 60px rgba(0,0,0,.55);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(1000px 700px at 85% 15%, rgba(34,197,94,.18), transparent 55%),
+        radial-gradient(900px 700px at 50% 95%, rgba(251,191,36,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:22px}
+    .nav{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(7,10,18,.82), rgba(7,10,18,.40));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 22px}
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px
+    }
+    .logo{
+      width:36px;height:36px;border-radius:14px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.28), rgba(255,255,255,.06)),
+                  linear-gradient(135deg, rgba(96,165,250,.85), rgba(34,197,94,.75));
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    }
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .pill{
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.06);
+      padding:8px 12px;border-radius:999px;
+      color:var(--muted);font-size:13px;
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      cursor:pointer;
+      user-select:none;
+      font-weight:650;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.085); border-color:rgba(255,255,255,.18)}
+    .btn-primary{
+      background: linear-gradient(135deg, rgba(34,197,94,.92), rgba(96,165,250,.60));
+      border-color: rgba(34,197,94,.35);
+    }
+    .btn-primary:hover{background: linear-gradient(135deg, rgba(34,197,94,.98), rgba(96,165,250,.72))}
+    .btn-ghost{
+      background: transparent;
+      border-color: rgba(255,255,255,.12);
+    }
+
+    .hero{
+      padding: 26px 0 14px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+
+    @media (max-width: 960px){
+      .hero-grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.045));
+      border:1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;inset:-2px;
+      background:
+        radial-gradient(600px 220px at 20% 0%, rgba(96,165,250,.22), transparent 55%),
+        radial-gradient(500px 240px at 90% 10%, rgba(34,197,94,.18), transparent 55%);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .card > *{position:relative; z-index:1}
+
+    .hero-left{padding:26px}
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;
+      color:var(--muted);font-size:13px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      padding:7px 10px;border-radius:999px;
+    }
+    .k-dot{
+      width:8px;height:8px;border-radius:999px;background: var(--brand);
+      box-shadow: 0 0 18px rgba(34,197,94,.55);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.05;
+      letter-spacing: -0.7px;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 52ch;
+    }
+
+    .glowword{
+      display:inline-block;
+      padding: 0 10px;
+      border-radius: 14px;
+      margin-left: 6px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      transform: translateY(-2px);
+      text-shadow: 0 0 18px rgba(96,165,250,.35);
+    }
+    .glowword[data-tone="green"]{text-shadow:0 0 18px rgba(34,197,94,.55)}
+    .glowword[data-tone="blue"]{text-shadow:0 0 18px rgba(96,165,250,.55)}
+    .glowword[data-tone="gold"]{text-shadow:0 0 18px rgba(251,191,36,.55)}
+
+    .wordcycle{
+      display:inline-block;
+      min-width: 12ch;
+      margin-left: 8px;
+      font-weight: 900;
+      letter-spacing: -0.6px;
+      position: relative;
+    }
+    .wordcycle .w{
+      position:absolute;left:0;top:0;
+      opacity:0;
+      transform: translateY(10px) scale(.98);
+      filter: blur(1px);
+      white-space:nowrap;
+    }
+    /* Slow in, fast out */
+    .wordcycle .w.show{
+      animation: inSlow 1.05s ease forwards, outFast .35s ease forwards;
+      animation-delay: 0s, var(--hold, 2.2s);
+    }
+    @keyframes inSlow{
+      from{opacity:0; transform: translateY(12px) scale(.985); filter: blur(2px)}
+      to{opacity:1; transform: translateY(0) scale(1); filter: blur(0)}
+    }
+    @keyframes outFast{
+      from{opacity:1; transform: translateY(0) scale(1); filter: blur(0)}
+      to{opacity:0; transform: translateY(-8px) scale(.99); filter: blur(1.5px)}
+    }
+
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}
+    .mini{
+      color: var(--muted);
+      font-size: 12.5px;
+      margin-top: 10px;
+    }
+
+    .hero-right{
+      padding:18px;
+      display:flex;flex-direction:column;gap:12px;
+    }
+
+    .stat{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .stat .box{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius:18px;
+      padding:14px;
+    }
+    .box .big{
+      font-size:18px;font-weight:850;
+    }
+    .box .small{
+      margin-top:4px;font-size:12.5px;color:var(--muted)
+    }
+
+    .list{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius:18px;
+      padding:14px;
+    }
+    .li{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+    .li:last-child{border-bottom:0}
+    .icon{
+      width:22px;height:22px;border-radius:10px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      display:inline-flex;align-items:center;justify-content:center;
+      flex: 0 0 auto;
+      margin-top:1px;
+    }
+    .li b{display:block}
+    .li span{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+
+    .section{padding:18px 0}
+    .section h2{
+      font-size: 22px; margin: 0 0 12px;
+      letter-spacing: -0.3px;
+    }
+    .grid3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+    }
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+
+    .feature{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+    }
+    .feature .t{font-weight:800;margin-top:8px}
+    .feature .d{color:var(--muted);font-size:13px;margin-top:6px;line-height:1.45}
+
+    .steps{
+      display:grid; grid-template-columns: 1.05fr .95fr; gap:12px;
+    }
+    @media (max-width: 900px){ .steps{grid-template-columns:1fr} }
+
+    .stepCard{padding:18px}
+    .steps ol{margin:0;padding-left:18px;color:var(--muted)}
+    .steps li{margin:10px 0}
+    .note{
+      margin-top:10px;
+      font-size:12.5px;color:rgba(255,255,255,.6)
+    }
+
+    details{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    details + details{margin-top:10px}
+    summary{cursor:pointer;font-weight:800}
+    details p{margin:8px 0 0;color:var(--muted);font-size:13.5px;line-height:1.5}
+
+    footer{
+      padding: 22px 0 30px;
+      color: rgba(255,255,255,.55);
+      font-size: 12px;
+    }
+    .footer-card{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .footer-card b{color:rgba(255,255,255,.78)}
+
+    /* WhatsApp floating button */
+    .wa-fab{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 999;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 999px;
+      background: rgba(34,197,94,.94);
+      border: 1px solid rgba(255,255,255,.22);
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
+      transform: translateZ(0);
+      transition: transform .2s ease, filter .2s ease;
+    }
+    .wa-fab:hover{transform: translateY(-2px); filter:saturate(1.05)}
+    .wa-fab svg{width:20px;height:20px;fill:#07110b}
+    .wa-text{font-weight:900;color:#07110b}
+    .wa-sub{display:block;font-weight:650;font-size:12px;opacity:.85;color:#07110b;line-height:1.05}
+
+    /* subtle entrance */
+    .reveal{opacity:0; transform: translateY(14px); filter: blur(1px)}
+    .reveal.show{opacity:1; transform: translateY(0); filter: blur(0); transition: all .7s ease}
+
+    /* tiny badge */
+    .age{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.72);
+      font-size:12.5px;
+    }
+    .age i{
+      width:22px;height:22px;border-radius:999px;
+      display:inline-flex;align-items:center;justify-content:center;
+      background: rgba(251,191,36,.20);
+      border: 1px solid rgba(251,191,36,.35);
+      color: rgba(255,255,255,.9);
+      font-style: normal;
+      font-weight: 900;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="line-height:1.05">CASINO<span style="opacity:.75">.ONLINE</span></div>
+          <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:2px">Atención por WhatsApp</div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <span class="pill">Soporte 24/7</span>
+        <span class="pill">Pagos rápidos</span>
+        <a class="btn btn-primary" id="topCta" href="#" role="button" aria-label="Hablar por WhatsApp">
+          <span>Empezar por WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-left reveal">
+          <div class="kicker"><span class="k-dot" aria-hidden="true"></span>Registro asistido • Activación en minutos</div>
+
+          <h1>
+            Jugá online
+            <span class="glowword" data-tone="blue">simple</span>
+            <span style="display:inline-block">y</span>
+            <span class="glowword" data-tone="green">rápido</span>
+            <br/>
+            <span style="opacity:.92">por</span>
+            <span class="wordcycle" aria-label="Acción principal">
+              <span class="w" data-tone="green">WhatsApp</span>
+              <span class="w" data-tone="blue">Atención</span>
+              <span class="w" data-tone="gold">Soporte</span>
+            </span>
+          </h1>
+
+          <p class="sub">
+            Te guiamos paso a paso: creás tu usuario, cargás saldo y empezás a jugar.
+            Promociones sujetas a términos y condiciones. <b>+18</b>.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" id="heroCta" href="#">
+              <span>Hablar por WhatsApp</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn-ghost" href="#como-funciona">
+              Cómo funciona
+            </a>
+            <span class="age"><i>18+</i> Juego responsable</span>
+          </div>
+
+          <div class="mini">
+            Al tocar el botón, se abre WhatsApp con un mensaje listo para enviar.
+          </div>
+        </div>
+
+        <aside class="card hero-right reveal">
+          <div class="stat">
+            <div class="box">
+              <div class="big">Alta rápida</div>
+              <div class="small">Te ayudamos a registrarte</div>
+            </div>
+            <div class="box">
+              <div class="big">Soporte 24/7</div>
+              <div class="small">Consultas y asistencia</div>
+            </div>
+          </div>
+
+          <div class="list" aria-label="Beneficios">
+            <div class="li">
+              <span class="icon" aria-hidden="true">⚡</span>
+              <div>
+                <b>Cargas y retiros</b>
+                <span>Coordinamos por WhatsApp (según método disponible).</span>
+              </div>
+            </div>
+            <div class="li">
+              <span class="icon" aria-hidden="true">🛡️</span>
+              <div>
+                <b>Guía paso a paso</b>
+                <span>Te acompañamos desde el inicio.</span>
+              </div>
+            </div>
+            <div class="li">
+              <span class="icon" aria-hidden="true">🎁</span>
+              <div>
+                <b>Bonos y promos</b>
+                <span>Sujeto a T&amp;C y verificación de cuenta.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            Recomendación: si tenés problemas de autocontrol, buscá ayuda profesional y evitá jugar.
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reveal" id="beneficios">
+      <h2>Por qué elegirnos</h2>
+      <div class="grid3">
+        <div class="feature">
+          <div class="icon" aria-hidden="true">💬</div>
+          <div class="t">Atención inmediata</div>
+          <div class="d">Escribinos y te respondemos para ayudarte a empezar o resolver dudas.</div>
+        </div>
+        <div class="feature">
+          <div class="icon" aria-hidden="true">💳</div>
+          <div class="t">Métodos de pago</div>
+          <div class="d">Te indicamos las opciones disponibles y cómo realizar la carga de forma simple.</div>
+        </div>
+        <div class="feature">
+          <div class="icon" aria-hidden="true">🎮</div>
+          <div class="t">Variedad de juegos</div>
+          <div class="d">Slots, ruleta y más (según disponibilidad). Jugá con límites y control.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section steps reveal" id="como-funciona">
+      <div class="card stepCard">
+        <h2>Cómo funciona</h2>
+        <ol>
+          <li><b>Escribinos por WhatsApp</b> y te enviamos los pasos.</li>
+          <li><b>Creamos tu usuario</b> (o te guiamos para hacerlo).</li>
+          <li><b>Cargás saldo</b> y empezás a jugar.</li>
+        </ol>
+        <div class="note">Siempre +18. Bonos y promociones sujetos a T&amp;C.</div>
+        <div class="cta-row" style="margin-top:12px">
+          <a class="btn btn-primary" id="howCta" href="#">Empezar ahora</a>
+          <a class="btn btn-ghost" href="#faq">Ver FAQ</a>
+        </div>
+      </div>
+
+      <div class="card stepCard">
+        <h2>Transparencia</h2>
+        <div class="feature" style="background:rgba(255,255,255,.045)">
+          <div class="t">Juego responsable</div>
+          <div class="d">
+            Jugá solo por entretenimiento. No persigas pérdidas.
+            Si el juego interfiere con tu vida, pedí ayuda y detené el acceso.
+          </div>
+        </div>
+        <div class="feature" style="margin-top:12px;background:rgba(255,255,255,.045)">
+          <div class="t">Verificación</div>
+          <div class="d">
+            Algunas operaciones pueden requerir verificación de identidad/edad y validaciones adicionales.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="faq">
+      <h2>Preguntas frecuentes</h2>
+
+      <details>
+        <summary>¿Qué pasa cuando toco “Hablar por WhatsApp”?</summary>
+        <p>Se abre WhatsApp con un mensaje pre-escrito. Solo lo enviás y te atendemos.</p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto tarda el alta?</summary>
+        <p>Normalmente es rápido. Depende de la verificación y del flujo del momento.</p>
+      </details>
+
+      <details>
+        <summary>¿Hay promociones?</summary>
+        <p>Sí, puede haber bonos/promos. Siempre sujetos a términos, condiciones y elegibilidad.</p>
+      </details>
+
+      <details>
+        <summary>¿Es para mayores de 18?</summary>
+        <p>Sí. Prohibido para menores. Podemos pedir validación de edad.</p>
+      </details>
+    </section>
+
+    <footer class="reveal">
+      <div class="footer-card">
+        <b>+18 • Juego responsable.</b> Esta página es informativa/comercial. Las promociones y operaciones están sujetas a términos, condiciones y validaciones.
+        Si el juego te genera problemas, considerá buscar ayuda y limitar el acceso.
+      </div>
+      <div style="margin-top:10px;opacity:.65">© <span id="year"></span> Casino Online. Todos los derechos reservados.</div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp Button -->
+  <a class="wa-fab" id="waFab" href="#" aria-label="Abrir WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.37c-.26-.13-1.53-.75-1.77-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.08-1.28-.77-.69-1.29-1.55-1.44-1.81-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.39-.8-1.9-.21-.5-.42-.43-.58-.44h-.5c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.14 0 1.26.93 2.48 1.06 2.65.13.17 1.83 2.8 4.44 3.92.62.27 1.1.43 1.48.55.62.2 1.18.17 1.62.1.49-.07 1.53-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.06-.11-.23-.17-.49-.3zM16.04 3C9.39 3 4 8.39 4 15.04c0 2.12.55 4.11 1.51 5.84L4 29l8.31-1.44c1.69.92 3.63 1.44 5.73 1.44 6.65 0 12.04-5.39 12.04-12.04C30.08 8.39 22.69 3 16.04 3zm0 23.05c-1.88 0-3.62-.54-5.09-1.47l-.36-.22-4.93.85.88-4.8-.24-.38a9.95 9.95 0 0 1-1.59-5.39c0-5.52 4.49-10.01 10.01-10.01 5.52 0 10.01 4.49 10.01 10.01 0 5.52-4.49 10.01-10.01 10.01z"/>
+    </svg>
+    <div>
+      <div class="wa-text">WhatsApp</div>
+      <span class="wa-sub">Atención inmediata</span>
+    </div>
+  </a>
+
+  <script>
+    // ====== CONFIG ======
+    // IMPORTANTE: Reemplazá por tu número en formato internacional sin "+" ni espacios.
+    // Ej: Argentina: 54911XXXXXXXXX | Uruguay: 5989XXXXXXX
+    const WHATSAPP_NUMBER = "5491100000000";
+
+    const BRAND_NAME = "Casino Online";
+    const DEFAULT_MESSAGE = "Hola! Quiero información para empezar a jugar. ¿Me ayudás con el alta?";
+
+    // Si querés rotar mensajes, agregá más:
+    const MESSAGES = [
+      DEFAULT_MESSAGE,
+      "Hola! Quiero crear mi usuario. ¿Cuáles son los pasos?",
+      "Buenas! ¿Qué métodos de carga y retiro tienen disponibles?",
+      "Hola! ¿Hay alguna promo vigente? (sujeta a T&C)"
+    ];
+
+    // ====== Helpers ======
+    function pickMessage(){
+      return MESSAGES[Math.floor(Math.random() * MESSAGES.length)];
+    }
+
+    function waLink(message){
+      const text = encodeURIComponent(message);
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+    }
+
+    function openWhatsApp(source){
+      const msg = pickMessage();
+      const url = waLink(msg);
+
+      // Evento simple (por si querés medir luego con tu analítica/pixel)
+      window.dispatchEvent(new CustomEvent("WhatsAppClick", { detail: { source, message: msg } }));
+      console.log("[WhatsAppClick]", { source, msg });
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    // ====== Bind CTA ======
+    const heroCta = document.getElementById("heroCta");
+    const topCta  = document.getElementById("topCta");
+    const howCta  = document.getElementById("howCta");
+    const waFab   = document.getElementById("waFab");
+
+    [heroCta, topCta, howCta, waFab].forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        openWhatsApp(el.id || "cta");
+      });
+      // fallback href para SEO/UX
+      el.setAttribute("href", waLink(DEFAULT_MESSAGE));
+    });
+
+    // ====== Word cycle (slow in / fast out) ======
+    const words = Array.from(document.querySelectorAll(".wordcycle .w"));
+    const tones = ["green","blue","gold"];
+    let idx = 0;
+
+    function showWord(i){
+      words.forEach(w => w.classList.remove("show"));
+      const w = words[i];
+      const tone = tones[i % tones.length];
+      w.style.textShadow =
+        tone === "green" ? "0 0 22px rgba(34,197,94,.70)" :
+        tone === "gold"  ? "0 0 22px rgba(251,191,36,.70)" :
+                           "0 0 22px rgba(96,165,250,.70)";
+      w.style.setProperty("--hold","2.3s");
+      w.classList.add("show");
+    }
+    showWord(idx);
+    setInterval(() => {
+      idx = (idx + 1) % words.length;
+      showWord(idx);
+    }, 2600);
+
+    // ====== Reveal on scroll ======
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if(e.isIntersecting){
+          e.target.classList.add("show");
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+
+    // ====== Footer year ======
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
